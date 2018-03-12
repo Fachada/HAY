@@ -164,3 +164,10 @@ INSERT INTO images (pic_path, title) VALUES ("niey1Nq", "Be My Valentine´s?");
 INSERT INTO images (pic_path, title) VALUES ("H2GBDo5", "Already My Valentines");
 INSERT INTO images (pic_path, title) VALUES ("7I7zcgP", "First Visitors/Possible Hiring Partners?");
 INSERT INTO images (pic_path, title) VALUES ("zubo3gG", "Abi´s Birthday");
+
+CREATE TABLE videos (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  video_link varchar(55)
+);
+
+INSERT INTO videos (video_link) VALUES ("https://www.youtube.com/embed/aeL9gagV_VA")
