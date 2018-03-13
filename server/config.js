@@ -12,10 +12,15 @@ app.use(express.static(__dirname + "/../react-client/dist"));
 
 //GET request routes
 app.get("/home", route.getQuotes)
+
 app.get("/home-pics", route.getGallery)
+
 app.get("/cohort", route.getCohortMembers)
-app.get("/videos",route.getVideos)
+
+
 //GET profile/:id is not used
 //app.get('/profile/:id', route.renderProfile)
+
+//GET request to render video compon
 
 module.exports = app;

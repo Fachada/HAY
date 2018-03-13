@@ -2,8 +2,8 @@ import React from 'react';
 
 import HeaderBar from "../components/home/HeaderBar.jsx";
 import HolaAboutMe from "../components/profile/HolaAboutMe.jsx";
-
 //import PerfilCard from "../components/profile/PictureComponent.jsx";
+
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -20,9 +20,10 @@ export default class Profile extends React.Component {
 
   selectSingleProfile(profiles) {
     for (let key in profiles) {
-      for (let i = 0; i < profiles[key].length; i++) {
+      for (let i = 0; i < profiles[key].length; i++){
         if (profiles[key][i].id === parseInt(this.props.match.params.id)) {
-          this.setState({profile: profiles[key][i]
+          this.setState({
+            profile: profiles[key][i]
           })
         }
       }
@@ -30,39 +31,49 @@ export default class Profile extends React.Component {
   }
 
   render() {
-    return (<div>
-      <HeaderBar/>
+    return (
       <div>
-        <HolaAboutMe/>
-        <div id='fondoPerfil'>
+        <HeaderBar />
+        <div>
+          <HolaAboutMe />
+          <div id='fondoPerfil'>
           <br/>
-          <br/>
-          <br/>
-          <section className="LaDeArriba-section">
-            <div className="row">
-              <div className="col-md-3"></div>
-              <div id='ProfileCard' className="col-md-6">
-                <div id="card5" className="card">
-                  <div className="Nicolas-Card" style={{
-                      width: "18rem"
-                    }}>
-                    <img id="picPro" className="card-img-top-Nicolas" src={`https://i.imgur.com/${this.state.profile.picture_path}.jpg`}/>
-                    <div id="lettersWithIn" className="card-body">
-                      <h4 className="card-title">{`${this.state.profile.first_name} ${this.state.profile.last_name}`}</h4>
-                      <h6>Mentor</h6>
-                      <p className="card-text">{"View GitHub Profile: " + `https://github.com/${this.state.profile.github_link}`}</p>
+            <br/>
+              <br/>
+            <section className="LaDeArriba-section">
+              <div className="row">
+                <div className="col-md-3">
+                </div>
+                <div id='ProfileCard' className="col-md-6">
+                  <div id="card5" className="card">
+                    <div className="Nicolas-Card" style={{width: "18rem"}}>
+                      <img className="card-img-top-Nicolas" src={`https://i.imgur.com/${this.state.profile.picture_path}.jpg`}/>
+                        <div className="card-body">
+                        <h4 className="card-title">{`${this.state.profile.first_name} ${this.state.profile.last_name}`}</h4>
+                        <h6>Mentor</h6>
+                        <p className="card-text">{"View GitHub Profile: " + `https://github.com/${this.state.profile.github_link}`}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div className="col-md-3">
+                </div>
+                <div>
+                   <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${video.id.videoId}`} allowFullScreen></iframe>
+                  <iframe className="embed-responsive-item" width="600" height="420"
+                     src='https://www.youtube.com/embed/aeL9gagV_VA'
+                     frameBorder="0" allowFullScreen>
+                   </iframe>
+                </div>
               </div>
-              <div className="col-md-3"></div>
-            </div>
-          </section>
-          <br/>
-          <br/>
-          <div></div>
+            </section>
+            <br/>
+              <br/>
+          <div>
+        </div>
         </div>
       </div>
-    </div>)
+      </div>
+    )
   }
 }
